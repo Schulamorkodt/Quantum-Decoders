@@ -1,9 +1,9 @@
 [project]
 name = "quantum-decoder"
 version = "0.1.0"
-description = "Quantum error decoder experiments using Stim, LDPC, and GF(2) tools."
+description = "Stim Quantum error decoder experiments"
 authors = [
-    { name = "Your Name", email = "your.email@example.com" }
+    { name = "Samantha Chulamorkodt", email = "schulamorkodt8@example.com" }
 ]
 readme = "README.md"
 requires-python = ">=3.9"
