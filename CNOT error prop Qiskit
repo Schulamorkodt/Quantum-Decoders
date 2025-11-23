@@ -1,0 +1,33 @@
+# X error propagtion
+# Import necessary libraries
+from qiskit import QuantumCircuit
+from qiskit_aer import Aer
+from qiskit.visualization import plot_histogram
+
+# Create a 3-qubit circuit with no error (entangling the qubits)
+qc_no_error = QuantumCircuit(3, 3)
+qc_no_error.cx(0, 1)  # CNOT gate (Q0 -> Q1)
+qc_no_error.cx(1, 2)  # CNOT gate (Q1 -> Q2)
+qc_no_error.measure([0, 1, 2], [0, 1, 2])  # Measure all qubits
+
+# Create a 3-qubit circuit with an X error on Q0 (entangling the qubits)
+qc_with_error = QuantumCircuit(3, 3)
+qc_with_error.x(1)  # Apply X error (bit-flip) to Q1
+qc_with_error.cx(0, 1)  # CNOT gate (Q0 -> Q1)
+qc_with_error.cx(1, 2)  # CNOT gate (Q1 -> Q2)
+qc_with_error.measure([0, 1, 2], [0, 1, 2])  # Measure all qubits
+
+# Use Aer simulator
+simulator = Aer.get_backend('aer_simulator')
+
+# Run the simulation for both circuits
+result_no_error = simulator.run(qc_no_error, shots=10000).result()
+result_with_error = simulator.run(qc_with_error, shots=10000).result()
+
+# Get counts (measurement outcomes)
+counts_no_error = result_no_error.get_counts()
+counts_with_error = result_with_error.get_counts()
+
+# Plot the histograms to visualize the impact of the X error
+plot_histogram([counts_no_error, counts_with_error], legend=['No X Error', 'With X Error'])
+
