@@ -1,37 +1,46 @@
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
+# === Python cache ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# === C extensions / compiled objects ===
 *.so
+*.dylib
+*.dll
+*.o
+*.a
 
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
+# === Virtual environments ===
+.env
+.venv
+venv/
+env/
 
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
+# === Build & packaging ===
+build/
+dist/
+*.egg-info/
+*.egg
 
-# OS generated files #
-######################
+# === Jupyter ===
+.ipynb_checkpoints/
+*.ipynb~
+
+# === Editor-specific ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === OS files ===
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
+
+# === Logs ===
+*.log
+
+# === Stim + LDPC generated files (safe default) ===
+*.stim
+*.dem
+*.out
