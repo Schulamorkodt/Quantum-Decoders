@@ -1,0 +1,20 @@
+[project]
+name = "quantum-decoder"
+version = "0.1.0"
+description = "Quantum error decoder experiments using Stim, LDPC, and GF(2) tools."
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "stim",
+    "ldpc",
+    "scipy",
+    "matplotlib"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
