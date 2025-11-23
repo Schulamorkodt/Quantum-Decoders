@@ -5,7 +5,9 @@ LDPC-style decoders, BP-SP decoders, and Monte Carlo simulations.
 
 
 ## Contents
-pip install -e .
+
+This repository includes:
+
 - GF(2) linear algebra tools  
 - CSS logical operator extraction  
 - Circulant matrix constructors  
@@ -16,8 +18,9 @@ pip install -e .
 - Monte-Carlo logical error rate plots  
 
 All code is located in:  
+```python
 quantum_decoder/code.py
-
+```
 ## Example Run
 
 Inside `example_run.py`:
